@@ -35,7 +35,16 @@ namespace ims
 
         public override void deleteBtn_Click(object sender, EventArgs e)
         {
-
+            if (edit == 1)
+            {
+                DialogResult dr = MessageBox.Show("Are you sure , you want to delete record?", "Question...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    deletion d = new deletion();
+                    d.delete(prodID, "st_productDelete", "@prodID");
+                    r.showProducts(dataGridView1, proIDGV, proGV, expiryGV, catGV, priceGV, barcodeGV, catIDGV);
+                }
+            }
         }
 
         public override void addBtn_Click(object sender, EventArgs e)
