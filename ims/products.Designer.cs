@@ -321,7 +321,6 @@ namespace ims
             this.expiryGV.HeaderText = "Expiry Date";
             this.expiryGV.Name = "expiryGV";
             this.expiryGV.ReadOnly = true;
-            this.expiryGV.Visible = false;
             // 
             // priceGV
             // 

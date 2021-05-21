@@ -24,8 +24,7 @@ namespace ims
         private void products_Load(object sender, EventArgs e)
         {
             MainClass.enable_reset(leftPanel);
-            edit = 0;
-            MainClass.disable_reset(leftPanel); //we stablish by default that the panels are reset when we load the program, until we select an option
+            r.getCategoriesList("st_getCategoriesList", categoryDD, "Category", "ID");
         }
 
         public override void rightPanel_Paint(object sender, PaintEventArgs e)
@@ -50,8 +49,8 @@ namespace ims
         public override void addBtn_Click(object sender, EventArgs e)
         {
             MainClass.enable_reset(leftPanel);
-
-            r.getCategoriesList("st_getCategoriesList", categoryDD, "Category", "ID");
+            edit = 0;
+            
         }
 
         public override void editBtn_Click(object sender, EventArgs e)
@@ -147,8 +146,16 @@ namespace ims
                 proTxt.Text = row.Cells["proGV"].Value.ToString();
                 priceTxt.Text = row.Cells["priceGV"].Value.ToString();
                 barcodeTxt.Text = row.Cells["barcodeGV"].Value.ToString();
-                expiryPicker.Value = Convert.ToDateTime(row.Cells["expiryGV"].Value.ToString());
-                categoryDD.SelectedItem = row.Cells["catGV"].Value.ToString();
+                //When we select a product that has a null expiry date
+                if (row.Cells["expiryGV"].FormattedValue.ToString() == "") // if it is null then we set the current date
+                {
+                    expiryPicker.Value = DateTime.Now;
+                }
+                else //if it is not null then we set the date in the picker
+                {
+                    expiryPicker.Value = Convert.ToDateTime(row.Cells["expiryGV"].Value.ToString());
+                }                
+                categoryDD.SelectedValue = row.Cells["catIDGV"].Value.ToString(); 
                 MainClass.disable(leftPanel);
             }
         }
