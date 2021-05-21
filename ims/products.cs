@@ -79,7 +79,14 @@ namespace ims
                 if (edit == 0) //Code for SAVE operation
                 {
                     insertion i = new insertion();
-                    i.insertProduct(proTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), expiryPicker.Value, Convert.ToInt32(categoryDD.SelectedValue));
+                    if (expiryPicker.Value.Date == DateTime.Now.Date) //if the expiry date is set now, then we set the value null
+                    {
+                        i.insertProduct(proTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), Convert.ToInt32(categoryDD.SelectedValue));
+                    }
+                    else //if the expiry date is set in another date different from now, we save the value
+                    {
+                        i.insertProduct(proTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), Convert.ToInt32(categoryDD.SelectedValue), expiryPicker.Value);
+                    }
                     r.showProducts(dataGridView1, proIDGV, proGV, expiryGV, catGV, priceGV, barcodeGV, catIDGV);
                     MainClass.disable_reset(leftPanel);
                 }
@@ -89,7 +96,14 @@ namespace ims
                     if (dr == DialogResult.Yes)
                     {
                         updation u = new updation();
-                        u.updateProduct(prodID, proTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), null, Convert.ToInt32(categoryDD.SelectedValue));
+                        if (expiryPicker.Value.Date == DateTime.Now.Date) //if the expiry date is set now, then we set the value null
+                        {
+                            u.updateProduct(prodID, proTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), Convert.ToInt32(categoryDD.SelectedValue));
+                        }
+                        else //if the expiry date is set in another date different from now, we save the value
+                        {
+                            u.updateProduct(prodID, proTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), Convert.ToInt32(categoryDD.SelectedValue), expiryPicker.Value);
+                        }
                         r.showProducts(dataGridView1, proIDGV, proGV, expiryGV, catGV, priceGV, barcodeGV, catIDGV);
                         MainClass.disable_reset(leftPanel);
                     }

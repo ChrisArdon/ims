@@ -60,7 +60,7 @@ namespace ims
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
-        public void updateProduct(int proID, string product, string barcode, float price, DateTime? expiry, int catID)
+        public void updateProduct(int proID, string product, string barcode, float price, int catID, DateTime? expiry=null)
         {
             try
             {
@@ -70,7 +70,15 @@ namespace ims
                 cmd.Parameters.AddWithValue("@name", product);
                 cmd.Parameters.AddWithValue("@barcode", barcode);
                 cmd.Parameters.AddWithValue("@price", price);
-                cmd.Parameters.AddWithValue("@expiry", expiry);
+                //We specify if the expiry date is null or if it has a value
+                if (expiry == null)
+                {
+                    cmd.Parameters.AddWithValue("@expiry", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@expiry", expiry);
+                }
                 cmd.Parameters.AddWithValue("@catID", catID);
                 cmd.Parameters.AddWithValue("@prodID", proID);
 
