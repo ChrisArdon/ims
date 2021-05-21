@@ -104,7 +104,7 @@ namespace ims
 
         public override void viewBtn_Click(object sender, EventArgs e) //Public override void to inherit: Build >> rebuild solution in Users form
         {
-
+            r.showProducts(dataGridView1, proIDGV, proGV, expiryGV, catGV, priceGV, barcodeGV, catIDGV);
         }
 
         private void categoryDD_SelectedIndexChanged(object sender, EventArgs e)

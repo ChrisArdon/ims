@@ -325,7 +325,8 @@ namespace ims
             // 
             // priceGV
             // 
-            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0";
             this.priceGV.DefaultCellStyle = dataGridViewCellStyle1;
             this.priceGV.HeaderText = "Price";
             this.priceGV.Name = "priceGV";
