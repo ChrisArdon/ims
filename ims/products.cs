@@ -65,6 +65,7 @@ namespace ims
             if (proTxt.Text == "") { proErrorLabel.Visible = true; } else { proErrorLabel.Visible = false; }
             if (barcodeTxt.Text == "") { barcodeErrorLabel.Visible = true; } else { barcodeErrorLabel.Visible = false; }
             if (expiryPicker.Value < DateTime.Now) { expiryErrorLabel.Visible = true; expiryErrorLabel.Text = "Invalid Date"; } else { expiryErrorLabel.Visible = false; }
+            if (expiryPicker.Value.Date == DateTime.Now.Date) { expiryErrorLabel.Visible = false; } //this fix the problem that we can use the current date 
             if (priceTxt.Text == "") { priceErrorLabel.Visible = true; } else { priceErrorLabel.Visible = false; }
             if (categoryDD.SelectedIndex == -1 || categoryDD.SelectedIndex == 0) { catErrorLabel.Visible = true; } else { catErrorLabel.Visible = false; }
 
@@ -88,7 +89,7 @@ namespace ims
                     if (dr == DialogResult.Yes)
                     {
                         updation u = new updation();
-                        u.updateProduct(prodID, proTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), expiryPicker.Value, Convert.ToInt32(categoryDD.SelectedValue));
+                        u.updateProduct(prodID, proTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), null, Convert.ToInt32(categoryDD.SelectedValue));
                         r.showProducts(dataGridView1, proIDGV, proGV, expiryGV, catGV, priceGV, barcodeGV, catIDGV);
                         MainClass.disable_reset(leftPanel);
                     }
