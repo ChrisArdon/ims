@@ -62,7 +62,7 @@ namespace ims
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("st_insertCategory", MainClass.con); //Here we are using the stored procedure
+                SqlCommand cmd = new SqlCommand("st_productInsert", MainClass.con); //Here we are using the stored procedure
                 cmd.CommandType = CommandType.StoredProcedure; //We specify the type of command that is a stored procedure
                                                                //We proceed to fill the parameters
                 cmd.Parameters.AddWithValue("@name", product);

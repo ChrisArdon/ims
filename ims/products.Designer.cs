@@ -29,7 +29,7 @@ namespace ims
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.proTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.proErrorLabel = new System.Windows.Forms.Label();
@@ -294,6 +294,7 @@ namespace ims
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(826, 541);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // proIDGV
@@ -324,8 +325,8 @@ namespace ims
             // 
             // priceGV
             // 
-            dataGridViewCellStyle2.NullValue = null;
-            this.priceGV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.NullValue = null;
+            this.priceGV.DefaultCellStyle = dataGridViewCellStyle1;
             this.priceGV.HeaderText = "Price";
             this.priceGV.Name = "priceGV";
             this.priceGV.ReadOnly = true;

@@ -121,5 +121,21 @@ namespace ims
         {
 
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1) //e is referencing to the column index and row index
+            {
+                edit = 1;
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                prodID = Convert.ToInt32(row.Cells["proIDGV"].Value.ToString()); // We get the userID of the selected cell. https://youtu.be/B5td7E7YGeA min 11:10
+                proTxt.Text = row.Cells["proGV"].Value.ToString();
+                priceTxt.Text = row.Cells["priceGV"].Value.ToString();
+                barcodeTxt.Text = row.Cells["barcodeGV"].Value.ToString();
+                expiryPicker.Value = Convert.ToDateTime(row.Cells["expiryGV"].Value.ToString());
+                categoryDD.SelectedItem = row.Cells["catGV"].Value.ToString();
+                MainClass.disable(leftPanel);
+            }
+        }
     }
 }
