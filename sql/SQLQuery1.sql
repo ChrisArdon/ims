@@ -79,3 +79,18 @@ u.usr_phone like '%'+@data+'%'
 or
 u.usr_email like '%'+@data+'%'
 order by u.usr_name asc
+
+--Get user details
+create procedure st_getUserDetails
+@user varchar(30),
+@pass nvarchar(30)
+as
+select 
+u.usr_id as 'ID',
+u.usr_name as 'Name',
+u.usr_username as 'Username',
+u.usr_password as 'Password'
+from users u
+where 
+u.usr_name = @user and
+u.usr_password = @pass
