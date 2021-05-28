@@ -33,8 +33,8 @@ namespace ims
             this.salesBtn = new System.Windows.Forms.Button();
             this.purchaseInvoiceBtn = new System.Windows.Forms.Button();
             this.stockBtn = new System.Windows.Forms.Button();
-            this.productsBtn = new System.Windows.Forms.Button();
             this.catBtn = new System.Windows.Forms.Button();
+            this.productsBtn = new System.Windows.Forms.Button();
             this.userBtn = new System.Windows.Forms.Button();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -124,21 +124,6 @@ namespace ims
             this.stockBtn.Text = "Stock";
             this.stockBtn.UseVisualStyleBackColor = true;
             // 
-            // productsBtn
-            // 
-            this.productsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.productsBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productsBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.productsBtn.FlatAppearance.BorderSize = 2;
-            this.productsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.productsBtn.Location = new System.Drawing.Point(193, 3);
-            this.productsBtn.Name = "productsBtn";
-            this.productsBtn.Size = new System.Drawing.Size(184, 131);
-            this.productsBtn.TabIndex = 1;
-            this.productsBtn.Text = "Products";
-            this.productsBtn.UseVisualStyleBackColor = true;
-            this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
-            // 
             // catBtn
             // 
             this.catBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -153,6 +138,23 @@ namespace ims
             this.catBtn.Text = "Categories";
             this.catBtn.UseVisualStyleBackColor = true;
             this.catBtn.Click += new System.EventHandler(this.catBtn_Click);
+            // 
+            // productsBtn
+            // 
+            this.productsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.productsBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productsBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.productsBtn.FlatAppearance.BorderSize = 2;
+            this.productsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.productsBtn.Image = global::ims.Properties.Resources.package;
+            this.productsBtn.Location = new System.Drawing.Point(193, 3);
+            this.productsBtn.Name = "productsBtn";
+            this.productsBtn.Size = new System.Drawing.Size(184, 131);
+            this.productsBtn.TabIndex = 1;
+            this.productsBtn.Text = "Products";
+            this.productsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.productsBtn.UseVisualStyleBackColor = true;
+            this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
             // 
             // userBtn
             // 
