@@ -34,8 +34,8 @@ namespace ims
             this.purchaseInvoiceBtn = new System.Windows.Forms.Button();
             this.stockBtn = new System.Windows.Forms.Button();
             this.productsBtn = new System.Windows.Forms.Button();
-            this.userBtn = new System.Windows.Forms.Button();
             this.catBtn = new System.Windows.Forms.Button();
+            this.userBtn = new System.Windows.Forms.Button();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -139,21 +139,6 @@ namespace ims
             this.productsBtn.UseVisualStyleBackColor = true;
             this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
             // 
-            // userBtn
-            // 
-            this.userBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.userBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.userBtn.FlatAppearance.BorderSize = 2;
-            this.userBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userBtn.Location = new System.Drawing.Point(3, 3);
-            this.userBtn.Name = "userBtn";
-            this.userBtn.Size = new System.Drawing.Size(184, 131);
-            this.userBtn.TabIndex = 0;
-            this.userBtn.Text = "Users";
-            this.userBtn.UseVisualStyleBackColor = true;
-            this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
-            // 
             // catBtn
             // 
             this.catBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -168,6 +153,23 @@ namespace ims
             this.catBtn.Text = "Categories";
             this.catBtn.UseVisualStyleBackColor = true;
             this.catBtn.Click += new System.EventHandler(this.catBtn_Click);
+            // 
+            // userBtn
+            // 
+            this.userBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.userBtn.FlatAppearance.BorderSize = 2;
+            this.userBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userBtn.Image = global::ims.Properties.Resources.usersmall;
+            this.userBtn.Location = new System.Drawing.Point(3, 3);
+            this.userBtn.Name = "userBtn";
+            this.userBtn.Size = new System.Drawing.Size(184, 131);
+            this.userBtn.TabIndex = 0;
+            this.userBtn.Text = "Users";
+            this.userBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.userBtn.UseVisualStyleBackColor = true;
+            this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
             // 
             // HomeScreen
             // 
