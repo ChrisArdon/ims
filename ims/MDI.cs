@@ -46,5 +46,12 @@ namespace ims
             settings set = new settings();
             MainClass.showWindow(set, this);
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            login set = new login();
+            MainClass.showWindow(set, this);
+            MDI.logoutToolStripMenuItem.Enabled = false; //If we click logout we are no longer in the HomeScreen, therefore there is nowhere to log out
+        }
     }
 }

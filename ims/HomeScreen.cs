@@ -20,6 +20,9 @@ namespace ims
         private void HomeScreen_Load(object sender, EventArgs e)
         {
             userLabel.Text = retrieval.EMP_NAME; //Here we use the public static string that we created (set and get)
+
+            //Logout button 
+            MDI.logoutToolStripMenuItem.Enabled = true; //We enable the button because it means if we are in this form we've logged successfully 
         }
 
         private void userBtn_Click(object sender, EventArgs e)
