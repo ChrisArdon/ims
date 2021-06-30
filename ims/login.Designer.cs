@@ -34,6 +34,8 @@ namespace ims
             this.usernameTxt = new System.Windows.Forms.TextBox();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
+            this.usernameErrorLbl = new System.Windows.Forms.Label();
+            this.passErrorLbl = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +47,11 @@ namespace ims
             this.leftPanel.Controls.Add(this.usernameTxt);
             this.leftPanel.Controls.Add(this.label4);
             this.leftPanel.Controls.Add(this.label3);
+            this.leftPanel.Controls.Add(this.usernameErrorLbl);
+            this.leftPanel.Controls.Add(this.passErrorLbl);
             this.leftPanel.Size = new System.Drawing.Size(250, 519);
+            this.leftPanel.Controls.SetChildIndex(this.passErrorLbl, 0);
+            this.leftPanel.Controls.SetChildIndex(this.usernameErrorLbl, 0);
             this.leftPanel.Controls.SetChildIndex(this.panel1, 0);
             this.leftPanel.Controls.SetChildIndex(this.label3, 0);
             this.leftPanel.Controls.SetChildIndex(this.label4, 0);
@@ -112,6 +118,30 @@ namespace ims
             this.loginBtn.UseVisualStyleBackColor = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
+            // usernameErrorLbl
+            // 
+            this.usernameErrorLbl.AutoSize = true;
+            this.usernameErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.usernameErrorLbl.Location = new System.Drawing.Point(216, 178);
+            this.usernameErrorLbl.Name = "usernameErrorLbl";
+            this.usernameErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.usernameErrorLbl.TabIndex = 13;
+            this.usernameErrorLbl.Text = "*";
+            this.usernameErrorLbl.Visible = false;
+            // 
+            // passErrorLbl
+            // 
+            this.passErrorLbl.AutoSize = true;
+            this.passErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.passErrorLbl.Location = new System.Drawing.Point(216, 223);
+            this.passErrorLbl.Name = "passErrorLbl";
+            this.passErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.passErrorLbl.TabIndex = 14;
+            this.passErrorLbl.Text = "*";
+            this.passErrorLbl.Visible = false;
+            // 
             // login
             // 
             this.AcceptButton = this.loginBtn;
@@ -135,5 +165,7 @@ namespace ims
         private System.Windows.Forms.TextBox usernameTxt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label usernameErrorLbl;
+        private System.Windows.Forms.Label passErrorLbl;
     }
 }

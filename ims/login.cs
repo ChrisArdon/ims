@@ -24,8 +24,24 @@ namespace ims
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            HomeScreen obj = new HomeScreen();
-            MainClass.showWindow(obj, this, MDI.ActiveForm);
+            if (usernameTxt.Text == "") { usernameErrorLbl.Visible = true; } else { usernameErrorLbl.Visible = false; }
+            if (passwordTxt.Text == "") { passErrorLbl.Visible = true; } else { passErrorLbl.Visible = false; }
+            if (usernameErrorLbl.Visible || passErrorLbl.Visible)
+            {
+                MainClass.ShowMSG("Fields with * are mandatory", "Stop", "Error");
+            }
+            else
+            {
+                if (retrieval.getUserDetails(usernameTxt.Text, passwordTxt.Text))
+                {
+                    HomeScreen hm = new HomeScreen();
+                    MainClass.showWindow(hm, this, MDI.ActiveForm);
+                }
+                else
+                {
+
+                }
+            }            
         }
     }
 }

@@ -141,7 +141,7 @@ namespace ims
                 cmd.Parameters.AddWithValue("@user",username);
                 cmd.Parameters.AddWithValue("@pass",password);
                 MainClass.con.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
+                SqlDataReader dr = cmd.ExecuteReader(); 
                 if (dr.HasRows)
                 {
                     checkLogin = true;
