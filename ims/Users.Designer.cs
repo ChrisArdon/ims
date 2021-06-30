@@ -40,7 +40,6 @@ namespace ims
             this.emailTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.nameErrorLabel = new System.Windows.Forms.Label();
             this.usernameErrorLabel = new System.Windows.Forms.Label();
             this.passwordErrorLabel = new System.Windows.Forms.Label();
             this.phoneErrorLabel = new System.Windows.Forms.Label();
@@ -56,10 +55,15 @@ namespace ims
             this.label8 = new System.Windows.Forms.Label();
             this.statusDD = new System.Windows.Forms.ComboBox();
             this.statusErrorLabel = new System.Windows.Forms.Label();
+            this.nameErrorLabel = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.Size = new System.Drawing.Size(142, 23);
             // 
             // leftPanel
             // 
@@ -90,7 +94,6 @@ namespace ims
             this.leftPanel.Controls.SetChildIndex(this.passwordErrorLabel, 0);
             this.leftPanel.Controls.SetChildIndex(this.usernameErrorLabel, 0);
             this.leftPanel.Controls.SetChildIndex(this.nameErrorLabel, 0);
-            this.leftPanel.Controls.SetChildIndex(this.panel1, 0);
             this.leftPanel.Controls.SetChildIndex(this.label3, 0);
             this.leftPanel.Controls.SetChildIndex(this.nameTxt, 0);
             this.leftPanel.Controls.SetChildIndex(this.label4, 0);
@@ -104,10 +107,11 @@ namespace ims
             this.leftPanel.Controls.SetChildIndex(this.panel5, 0);
             this.leftPanel.Controls.SetChildIndex(this.label8, 0);
             this.leftPanel.Controls.SetChildIndex(this.statusDD, 0);
+            this.leftPanel.Controls.SetChildIndex(this.panel1, 0);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 51);
+            this.panel1.Location = new System.Drawing.Point(0, 80);
             // 
             // rightPanel
             // 
@@ -219,22 +223,10 @@ namespace ims
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 91);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(250, 29);
             this.panel5.TabIndex = 11;
-            // 
-            // nameErrorLabel
-            // 
-            this.nameErrorLabel.AutoSize = true;
-            this.nameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.nameErrorLabel.Location = new System.Drawing.Point(52, 123);
-            this.nameErrorLabel.Name = "nameErrorLabel";
-            this.nameErrorLabel.Size = new System.Drawing.Size(20, 28);
-            this.nameErrorLabel.TabIndex = 12;
-            this.nameErrorLabel.Text = "*";
-            this.nameErrorLabel.Visible = false;
             // 
             // usernameErrorLabel
             // 
@@ -389,6 +381,18 @@ namespace ims
             this.statusErrorLabel.Text = "*";
             this.statusErrorLabel.Visible = false;
             // 
+            // nameErrorLabel
+            // 
+            this.nameErrorLabel.AutoSize = true;
+            this.nameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.nameErrorLabel.Location = new System.Drawing.Point(52, 123);
+            this.nameErrorLabel.Name = "nameErrorLabel";
+            this.nameErrorLabel.Size = new System.Drawing.Size(20, 28);
+            this.nameErrorLabel.TabIndex = 12;
+            this.nameErrorLabel.Text = "*";
+            this.nameErrorLabel.Visible = false;
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -418,7 +422,6 @@ namespace ims
         private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label nameErrorLabel;
         private System.Windows.Forms.Label usernameErrorLabel;
         private System.Windows.Forms.Label passwordErrorLabel;
         private System.Windows.Forms.Label phoneErrorLabel;
@@ -434,5 +437,6 @@ namespace ims
         private System.Windows.Forms.ComboBox statusDD;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label statusErrorLabel;
+        private System.Windows.Forms.Label nameErrorLabel;
     }
 }

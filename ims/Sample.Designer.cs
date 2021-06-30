@@ -34,7 +34,7 @@ namespace ims
             this.label1 = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.userLabel = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -84,23 +84,23 @@ namespace ims
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.userLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(881, 40);
             this.panel2.TabIndex = 0;
             // 
-            // label2
+            // userLabel
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(667, 40);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "User";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.userLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userLabel.Location = new System.Drawing.Point(0, 0);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(667, 40);
+            this.userLabel.TabIndex = 0;
+            this.userLabel.Text = "User";
+            this.userLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Sample
             // 
@@ -127,6 +127,6 @@ namespace ims
         protected System.Windows.Forms.Panel rightPanel; // We unlock the panel for all the childs with "protected"
         protected System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Label userLabel;
     }
 }
