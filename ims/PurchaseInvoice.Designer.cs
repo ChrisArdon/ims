@@ -1,7 +1,7 @@
 ﻿
 namespace ims
 {
-    partial class Stocks
+    partial class PurchaseInvoice
     {
         /// <summary>
         /// Required designer variable.
@@ -36,28 +36,28 @@ namespace ims
             // 
             // searchTxt
             // 
-            this.searchTxt.Size = new System.Drawing.Size(187, 23);
+            this.searchTxt.Size = new System.Drawing.Size(179, 23);
             // 
             // leftPanel
             // 
-            this.leftPanel.Size = new System.Drawing.Size(250, 789);
+            this.leftPanel.Size = new System.Drawing.Size(250, 813);
             // 
             // rightPanel
             // 
-            this.rightPanel.Size = new System.Drawing.Size(1164, 789);
+            this.rightPanel.Size = new System.Drawing.Size(1141, 813);
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1164, 40);
+            this.panel2.Size = new System.Drawing.Size(1141, 40);
             // 
-            // Stocks
+            // PurchaseInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1414, 789);
-            this.Name = "Stocks";
-            this.Text = "Stocks";
-            this.Load += new System.EventHandler(this.Stocks_Load);
+            this.ClientSize = new System.Drawing.Size(1391, 813);
+            this.Name = "PurchaseInvoice";
+            this.Text = "PurchaseInvoice";
+            this.Load += new System.EventHandler(this.PurchaseInvoice_Load);
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

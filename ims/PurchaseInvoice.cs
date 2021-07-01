@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ims
 {
-    public partial class Stocks : Sample2
+    public partial class PurchaseInvoice : Sample2
     {
-        public Stocks()
+        public PurchaseInvoice()
         {
             InitializeComponent();
         }
 
-        private void Stocks_Load(object sender, EventArgs e)
+        private void PurchaseInvoice_Load(object sender, EventArgs e)
         {
 
         }
