@@ -41,6 +41,14 @@ namespace ims
             this.label6 = new System.Windows.Forms.Label();
             this.ntnTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.supplierNameErrorLbl = new System.Windows.Forms.Label();
+            this.contactPersonErrorLbl = new System.Windows.Forms.Label();
+            this.phone1ErrorLbl = new System.Windows.Forms.Label();
+            this.phone2ErrorLbl = new System.Windows.Forms.Label();
+            this.addressErrorLbl = new System.Windows.Forms.Label();
+            this.statusErrorLbl = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.statusDD = new System.Windows.Forms.ComboBox();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -52,6 +60,8 @@ namespace ims
             // 
             // leftPanel
             // 
+            this.leftPanel.Controls.Add(this.statusDD);
+            this.leftPanel.Controls.Add(this.label13);
             this.leftPanel.Controls.Add(this.ntnTxt);
             this.leftPanel.Controls.Add(this.label7);
             this.leftPanel.Controls.Add(this.addressTxt);
@@ -64,8 +74,20 @@ namespace ims
             this.leftPanel.Controls.Add(this.label3);
             this.leftPanel.Controls.Add(this.supplierCompanyTxt);
             this.leftPanel.Controls.Add(this.label2);
+            this.leftPanel.Controls.Add(this.supplierNameErrorLbl);
+            this.leftPanel.Controls.Add(this.contactPersonErrorLbl);
+            this.leftPanel.Controls.Add(this.phone1ErrorLbl);
+            this.leftPanel.Controls.Add(this.phone2ErrorLbl);
+            this.leftPanel.Controls.Add(this.addressErrorLbl);
+            this.leftPanel.Controls.Add(this.statusErrorLbl);
             this.leftPanel.Size = new System.Drawing.Size(250, 780);
             this.leftPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.leftPanel_Paint);
+            this.leftPanel.Controls.SetChildIndex(this.statusErrorLbl, 0);
+            this.leftPanel.Controls.SetChildIndex(this.addressErrorLbl, 0);
+            this.leftPanel.Controls.SetChildIndex(this.phone2ErrorLbl, 0);
+            this.leftPanel.Controls.SetChildIndex(this.phone1ErrorLbl, 0);
+            this.leftPanel.Controls.SetChildIndex(this.contactPersonErrorLbl, 0);
+            this.leftPanel.Controls.SetChildIndex(this.supplierNameErrorLbl, 0);
             this.leftPanel.Controls.SetChildIndex(this.panel1, 0);
             this.leftPanel.Controls.SetChildIndex(this.label2, 0);
             this.leftPanel.Controls.SetChildIndex(this.supplierCompanyTxt, 0);
@@ -79,6 +101,8 @@ namespace ims
             this.leftPanel.Controls.SetChildIndex(this.addressTxt, 0);
             this.leftPanel.Controls.SetChildIndex(this.label7, 0);
             this.leftPanel.Controls.SetChildIndex(this.ntnTxt, 0);
+            this.leftPanel.Controls.SetChildIndex(this.label13, 0);
+            this.leftPanel.Controls.SetChildIndex(this.statusDD, 0);
             // 
             // rightPanel
             // 
@@ -196,6 +220,101 @@ namespace ims
             this.label7.TabIndex = 12;
             this.label7.Text = "NTN #";
             // 
+            // supplierNameErrorLbl
+            // 
+            this.supplierNameErrorLbl.AutoSize = true;
+            this.supplierNameErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supplierNameErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.supplierNameErrorLbl.Location = new System.Drawing.Point(227, 94);
+            this.supplierNameErrorLbl.Name = "supplierNameErrorLbl";
+            this.supplierNameErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.supplierNameErrorLbl.TabIndex = 14;
+            this.supplierNameErrorLbl.Text = "*";
+            this.supplierNameErrorLbl.Visible = false;
+            // 
+            // contactPersonErrorLbl
+            // 
+            this.contactPersonErrorLbl.AutoSize = true;
+            this.contactPersonErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactPersonErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.contactPersonErrorLbl.Location = new System.Drawing.Point(227, 143);
+            this.contactPersonErrorLbl.Name = "contactPersonErrorLbl";
+            this.contactPersonErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.contactPersonErrorLbl.TabIndex = 15;
+            this.contactPersonErrorLbl.Text = "*";
+            this.contactPersonErrorLbl.Visible = false;
+            // 
+            // phone1ErrorLbl
+            // 
+            this.phone1ErrorLbl.AutoSize = true;
+            this.phone1ErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone1ErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.phone1ErrorLbl.Location = new System.Drawing.Point(227, 189);
+            this.phone1ErrorLbl.Name = "phone1ErrorLbl";
+            this.phone1ErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.phone1ErrorLbl.TabIndex = 16;
+            this.phone1ErrorLbl.Text = "*";
+            this.phone1ErrorLbl.Visible = false;
+            // 
+            // phone2ErrorLbl
+            // 
+            this.phone2ErrorLbl.AutoSize = true;
+            this.phone2ErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone2ErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.phone2ErrorLbl.Location = new System.Drawing.Point(227, 238);
+            this.phone2ErrorLbl.Name = "phone2ErrorLbl";
+            this.phone2ErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.phone2ErrorLbl.TabIndex = 17;
+            this.phone2ErrorLbl.Text = "*";
+            this.phone2ErrorLbl.Visible = false;
+            // 
+            // addressErrorLbl
+            // 
+            this.addressErrorLbl.AutoSize = true;
+            this.addressErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.addressErrorLbl.Location = new System.Drawing.Point(227, 286);
+            this.addressErrorLbl.Name = "addressErrorLbl";
+            this.addressErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.addressErrorLbl.TabIndex = 18;
+            this.addressErrorLbl.Text = "*";
+            this.addressErrorLbl.Visible = false;
+            // 
+            // statusErrorLbl
+            // 
+            this.statusErrorLbl.AutoSize = true;
+            this.statusErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.statusErrorLbl.Location = new System.Drawing.Point(227, 379);
+            this.statusErrorLbl.Name = "statusErrorLbl";
+            this.statusErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.statusErrorLbl.TabIndex = 19;
+            this.statusErrorLbl.Text = "*";
+            this.statusErrorLbl.Visible = false;
+            this.statusErrorLbl.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label13.Location = new System.Drawing.Point(5, 383);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 15);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Status";
+            // 
+            // statusDD
+            // 
+            this.statusDD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusDD.FormattingEnabled = true;
+            this.statusDD.Items.AddRange(new object[] {
+            "Active",
+            "In-Active"});
+            this.statusDD.Location = new System.Drawing.Point(8, 402);
+            this.statusDD.Name = "statusDD";
+            this.statusDD.Size = new System.Drawing.Size(236, 23);
+            this.statusDD.TabIndex = 21;
+            // 
             // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -226,5 +345,13 @@ namespace ims
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Phone1Txt;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox statusDD;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label supplierNameErrorLbl;
+        private System.Windows.Forms.Label contactPersonErrorLbl;
+        private System.Windows.Forms.Label phone1ErrorLbl;
+        private System.Windows.Forms.Label phone2ErrorLbl;
+        private System.Windows.Forms.Label addressErrorLbl;
+        private System.Windows.Forms.Label statusErrorLbl;
     }
 }

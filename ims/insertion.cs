@@ -91,5 +91,38 @@ namespace ims
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+        public void insertSupplier(string company, string person, float price, int catID, DateTime? expiry = null)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_productInsert", MainClass.con); //Here we are using the stored procedure
+                cmd.CommandType = CommandType.StoredProcedure; //We specify the type of command that is a stored procedure
+                                                               //We proceed to fill the parameters
+                cmd.Parameters.AddWithValue("@name", product);
+                cmd.Parameters.AddWithValue("@barcode", barcode);
+                cmd.Parameters.AddWithValue("@price", price);
+                //We specify if the expiry date is null or if it has a value
+                if (expiry == null)
+                {
+                    cmd.Parameters.AddWithValue("@expiry", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@expiry", expiry);
+                }
+                cmd.Parameters.AddWithValue("@catID", catID);
+
+                MainClass.con.Open();
+                cmd.ExecuteNonQuery();
+                MainClass.con.Close();
+                MainClass.ShowMSG(product + " added to the system successfully", "Success...", "Success");
+            }
+            catch (Exception ex)
+            {
+
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
     }
 }
