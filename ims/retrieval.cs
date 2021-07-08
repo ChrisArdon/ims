@@ -181,5 +181,33 @@ namespace ims
             }
             return checkLogin;
         }
+        public void showSuppliers(DataGridView gv, DataGridViewColumn suppIDGV, DataGridViewColumn conNameGV, DataGridViewColumn personGV, DataGridViewColumn phone1GV, DataGridViewColumn phone2GV, 
+            DataGridViewColumn addressGV, DataGridViewColumn ntnGV, DataGridViewColumn statusGV)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_getSupplierData", MainClass.con); ;
+                //SqlCommand cmd = new SqlCommand("st_getUsersData", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                suppIDGV.DataPropertyName = dt.Columns["ID"].ToString();
+                conNameGV.DataPropertyName = dt.Columns["Company"].ToString();
+                personGV.DataPropertyName = dt.Columns["Contact Person"].ToString();
+                phone1GV.DataPropertyName = dt.Columns["Phone 1"].ToString();
+                phone2GV.DataPropertyName = dt.Columns["Phone 2"].ToString();
+                addressGV.DataPropertyName = dt.Columns["Address"].ToString();
+                ntnGV.DataPropertyName = dt.Columns["NTN #"].ToString();
+                statusGV.DataPropertyName = dt.Columns["Status"].ToString();
+
+
+                gv.DataSource = dt;
+            }
+            catch (Exception)
+            {
+                MainClass.ShowMSG("Unable to load supplier data.", "Error", "Error");
+            }
+        }
     }
 }
