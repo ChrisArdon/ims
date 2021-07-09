@@ -83,9 +83,25 @@ namespace ims
                 {
 
                     insertion i = new insertion();
-
-                    i.insertUser(nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text, stat);
-                    r.showUsers(dataGridView1, UserIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+                    //validating the null fields 
+                    if (phone2Txt.Text == "" && ntnTxt.Text != "")
+                    {
+                        i.insertSupplier(supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat, null, ntnTxt.Text);
+                    }
+                    else if (phone2Txt.Text != "" && ntnTxt.Text == "")
+                    {
+                        i.insertSupplier(supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat, phone2Txt.Text, null);
+                    }
+                    else if (phone2Txt.Text == "" && ntnTxt.Text == "")
+                    {
+                        i.insertSupplier(supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat, null, null);
+                    }
+                    else
+                    {
+                        i.insertSupplier(supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat, phone2Txt.Text, ntnTxt.Text);
+                    }
+                    
+                    r.showSuppliers(dataGridView1, UserIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
                     MainClass.disable_reset(leftPanel);
 
                 }
