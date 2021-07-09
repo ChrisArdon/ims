@@ -49,9 +49,19 @@ namespace ims
             this.statusErrorLbl = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.statusDD = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SuppIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone1GV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone2GV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ntnGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchTxt
@@ -106,7 +116,10 @@ namespace ims
             // 
             // rightPanel
             // 
+            this.rightPanel.Controls.Add(this.dataGridView1);
             this.rightPanel.Size = new System.Drawing.Size(1146, 780);
+            this.rightPanel.Controls.SetChildIndex(this.panel2, 0);
+            this.rightPanel.Controls.SetChildIndex(this.dataGridView1, 0);
             // 
             // panel2
             // 
@@ -315,6 +328,81 @@ namespace ims
             this.statusDD.Size = new System.Drawing.Size(236, 23);
             this.statusDD.TabIndex = 21;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SuppIDGV,
+            this.companyGV,
+            this.personGV,
+            this.phone1GV,
+            this.phone2GV,
+            this.addressGV,
+            this.ntnGV,
+            this.StatusGV});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 91);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1146, 689);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // SuppIDGV
+            // 
+            this.SuppIDGV.HeaderText = "SuppID";
+            this.SuppIDGV.Name = "SuppIDGV";
+            this.SuppIDGV.ReadOnly = true;
+            this.SuppIDGV.Visible = false;
+            // 
+            // companyGV
+            // 
+            this.companyGV.HeaderText = "Company";
+            this.companyGV.Name = "companyGV";
+            this.companyGV.ReadOnly = true;
+            // 
+            // personGV
+            // 
+            this.personGV.HeaderText = "Contact Person";
+            this.personGV.Name = "personGV";
+            this.personGV.ReadOnly = true;
+            // 
+            // phone1GV
+            // 
+            this.phone1GV.HeaderText = "Phone 1";
+            this.phone1GV.Name = "phone1GV";
+            this.phone1GV.ReadOnly = true;
+            // 
+            // phone2GV
+            // 
+            this.phone2GV.HeaderText = "Phone 2";
+            this.phone2GV.Name = "phone2GV";
+            this.phone2GV.ReadOnly = true;
+            // 
+            // addressGV
+            // 
+            this.addressGV.HeaderText = "Address";
+            this.addressGV.Name = "addressGV";
+            this.addressGV.ReadOnly = true;
+            // 
+            // ntnGV
+            // 
+            this.ntnGV.HeaderText = "NTN #";
+            this.ntnGV.Name = "ntnGV";
+            this.ntnGV.ReadOnly = true;
+            // 
+            // StatusGV
+            // 
+            this.StatusGV.HeaderText = "Status";
+            this.StatusGV.Name = "StatusGV";
+            this.StatusGV.ReadOnly = true;
+            // 
             // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -327,6 +415,7 @@ namespace ims
             this.leftPanel.PerformLayout();
             this.rightPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,5 +442,14 @@ namespace ims
         private System.Windows.Forms.Label phone2ErrorLbl;
         private System.Windows.Forms.Label addressErrorLbl;
         private System.Windows.Forms.Label statusErrorLbl;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SuppIDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone1GV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone2GV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ntnGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusGV;
     }
 }
