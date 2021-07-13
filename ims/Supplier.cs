@@ -52,19 +52,19 @@ namespace ims
             }
         }
 
-        public virtual void addBtn_Click(object sender, EventArgs e)
+        public override void addBtn_Click(object sender, EventArgs e)
         {
             MainClass.enable_reset(leftPanel); //after we click "add" the register panel will be unlocked
             edit = 0;
         }
 
-        public virtual void editBtn_Click(object sender, EventArgs e)
+        public override void editBtn_Click(object sender, EventArgs e)
         {
             edit = 1;
             MainClass.enable(leftPanel);
         }
 
-        public virtual void saveBtn_Click(object sender, EventArgs e)
+        public override void saveBtn_Click(object sender, EventArgs e)
         {
             //Here we enable and disable the red asterisc "*" in the form, validating that no txt left unfilled
             if (supplierCompanyTxt.Text == "") { supplierNameErrorLbl.Visible = true; } else { supplierNameErrorLbl.Visible = false; }
@@ -156,12 +156,12 @@ namespace ims
             }
         }
 
-        public virtual void searchTxt_TextChanged(object sender, EventArgs e)
+        public override void searchTxt_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        public virtual void viewBtn_Click(object sender, EventArgs e) //Public virtual void to inherit: Build >> rebuild solution in Users form
+        public override void viewBtn_Click(object sender, EventArgs e) //Public virtual void to inherit: Build >> rebuild solution in Users form
         {
             r.showSuppliers(dataGridView1, SuppIDGV, companyGV, personGV, phone1GV, phone2GV, addressGV, ntnGV, StatusGV);
         }
