@@ -42,5 +42,11 @@ namespace ims
             products u = new products();
             MainClass.showWindow(u, this, MDI.ActiveForm);
         }
+
+        private void suppBtn_Click(object sender, EventArgs e)
+        {
+            Supplier u = new Supplier();
+            MainClass.showWindow(u, this, MDI.ActiveForm);
+        }
     }
 }

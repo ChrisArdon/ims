@@ -33,11 +33,13 @@ namespace ims
             this.salesBtn = new System.Windows.Forms.Button();
             this.purchaseInvoiceBtn = new System.Windows.Forms.Button();
             this.stockBtn = new System.Windows.Forms.Button();
-            this.catBtn = new System.Windows.Forms.Button();
             this.productsBtn = new System.Windows.Forms.Button();
             this.userBtn = new System.Windows.Forms.Button();
+            this.catBtn = new System.Windows.Forms.Button();
+            this.suppBtn = new System.Windows.Forms.Button();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +72,7 @@ namespace ims
             this.tableLayoutPanel1.Controls.Add(this.productsBtn, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.userBtn, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.catBtn, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.suppBtn, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -124,21 +127,6 @@ namespace ims
             this.stockBtn.Text = "Stock";
             this.stockBtn.UseVisualStyleBackColor = true;
             // 
-            // catBtn
-            // 
-            this.catBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.catBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.catBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.catBtn.FlatAppearance.BorderSize = 2;
-            this.catBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.catBtn.Location = new System.Drawing.Point(3, 140);
-            this.catBtn.Name = "catBtn";
-            this.catBtn.Size = new System.Drawing.Size(184, 131);
-            this.catBtn.TabIndex = 5;
-            this.catBtn.Text = "Categories";
-            this.catBtn.UseVisualStyleBackColor = true;
-            this.catBtn.Click += new System.EventHandler(this.catBtn_Click);
-            // 
             // productsBtn
             // 
             this.productsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -173,6 +161,36 @@ namespace ims
             this.userBtn.UseVisualStyleBackColor = true;
             this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
             // 
+            // catBtn
+            // 
+            this.catBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.catBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.catBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.catBtn.FlatAppearance.BorderSize = 2;
+            this.catBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.catBtn.Location = new System.Drawing.Point(3, 140);
+            this.catBtn.Name = "catBtn";
+            this.catBtn.Size = new System.Drawing.Size(184, 131);
+            this.catBtn.TabIndex = 5;
+            this.catBtn.Text = "Categories";
+            this.catBtn.UseVisualStyleBackColor = true;
+            this.catBtn.Click += new System.EventHandler(this.catBtn_Click);
+            // 
+            // suppBtn
+            // 
+            this.suppBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.suppBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suppBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.suppBtn.FlatAppearance.BorderSize = 2;
+            this.suppBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.suppBtn.Location = new System.Drawing.Point(193, 140);
+            this.suppBtn.Name = "suppBtn";
+            this.suppBtn.Size = new System.Drawing.Size(184, 131);
+            this.suppBtn.TabIndex = 6;
+            this.suppBtn.Text = "Suppliers";
+            this.suppBtn.UseVisualStyleBackColor = true;
+            this.suppBtn.Click += new System.EventHandler(this.suppBtn_Click);
+            // 
             // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -183,6 +201,7 @@ namespace ims
             this.Load += new System.EventHandler(this.HomeScreen_Load);
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -197,5 +216,6 @@ namespace ims
         private System.Windows.Forms.Button productsBtn;
         private System.Windows.Forms.Button userBtn;
         private System.Windows.Forms.Button catBtn;
+        private System.Windows.Forms.Button suppBtn;
     }
 }
