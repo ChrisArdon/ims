@@ -6,7 +6,7 @@ sup_contactPerson varchar(50) not null,
 sup_phone1 varchar(15) not null,
 sup_phone2 varchar(15),
 sup_address nvarchar(100) not null,
-sup_ntn varchar(25) not null,
+sup_ntn varchar(25),
 sup_status tinyint not null
 )
 
