@@ -93,6 +93,14 @@ namespace ims
                     if (dr == DialogResult.Yes)
                     {
                         updation u = new updation();
+                        if (activeDD.SelectedIndex == 0)
+                        {
+                            stat = 1; //this is sent to the stored procedure: status = 1 then 'Yes'
+                        }
+                        else if (activeDD.SelectedIndex == 1)
+                        {
+                            stat = 0;
+                        }
                         u.updateCat(catID, catTxt.Text, stat);
                         r.showCategories(dataGridView1, catIDGV, NameGV, StatusGV);
                         MainClass.disable_reset(leftPanel);
