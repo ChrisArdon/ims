@@ -40,7 +40,16 @@ namespace ims
 
         public virtual void deleteBtn_Click(object sender, EventArgs e)
         {
-
+            if (edit == 1)
+            {
+                DialogResult dr = MessageBox.Show("Are you sure , you want to delete record?", "Question...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    deletion d = new deletion();
+                    d.delete(supplierID, "st_deleteSupplier", "@suppID");
+                    r.showSuppliers(dataGridView1, SuppIDGV, companyGV, personGV, phone1GV, phone2GV, addressGV, ntnGV, StatusGV);
+                }
+            }
         }
 
         public virtual void addBtn_Click(object sender, EventArgs e)
