@@ -114,6 +114,10 @@ namespace ims
             this.leftPanel.Controls.SetChildIndex(this.label13, 0);
             this.leftPanel.Controls.SetChildIndex(this.statusDD, 0);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 51);
+            // 
             // rightPanel
             // 
             this.rightPanel.Controls.Add(this.dataGridView1);
@@ -353,6 +357,7 @@ namespace ims
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1146, 689);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // SuppIDGV
             // 

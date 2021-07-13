@@ -165,5 +165,23 @@ namespace ims
         {
             r.showSuppliers(dataGridView1, SuppIDGV, companyGV, personGV, phone1GV, phone2GV, addressGV, ntnGV, StatusGV);
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1) //e is referencing to the column index and row index
+            {
+                edit = 1;
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                supplierID = Convert.ToInt32(row.Cells["SuppIDGV"].Value.ToString()); // We get the userID of the selected cell. https://youtu.be/B5td7E7YGeA min 11:10
+                supplierCompanyTxt.Text = row.Cells["companyGV"].Value.ToString();
+                personNameTxt.Text = row.Cells["personGV"].Value.ToString();
+                Phone1Txt.Text = row.Cells["phone1GV"].Value.ToString();
+                phone2Txt.Text = row.Cells["phone2GV"].Value.ToString();
+                ntnTxt.Text = row.Cells["ntnGV"].Value.ToString();
+                addressTxt.Text = row.Cells["addressGV"].Value.ToString();
+                statusDD.SelectedItem = row.Cells["StatusGV"].Value.ToString();
+                MainClass.disable(leftPanel);
+            }
+        }
     }
 }
