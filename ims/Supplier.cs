@@ -18,7 +18,7 @@ namespace ims
         }
 
         int edit = 0;
-        int userID;
+        int supplierID;
         short stat;
         retrieval r = new retrieval();
 
@@ -100,8 +100,8 @@ namespace ims
                     {
                         i.insertSupplier(supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat, phone2Txt.Text, ntnTxt.Text);
                     }
-                    
-                    r.showSuppliers(dataGridView1, UserIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+
+                    r.showSuppliers(dataGridView1, SuppIDGV,companyGV , personGV, phone1GV, phone2GV, addressGV, ntnGV,StatusGV);
                     MainClass.disable_reset(leftPanel);
 
                 }
@@ -111,8 +111,33 @@ namespace ims
                     if (dr == DialogResult.Yes)
                     {
                         updation u = new updation();
-                        u.updateUser(userID, nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text, stat);
-                        r.showUsers(dataGridView1, UserIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+                        if (statusDD.SelectedIndex == 0)
+                        {
+                            stat = 1;
+                        }
+                        else if (statusDD.SelectedIndex == 1)
+                        {
+                            stat = 0;
+                        }
+                        //validating the null fields 
+                        if (phone2Txt.Text == "" && ntnTxt.Text != "")
+                        {
+                            u.updateSupplier(supplierID, supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat,null, ntnTxt.Text);
+                        }
+                        else if (phone2Txt.Text != "" && ntnTxt.Text == "")
+                        {
+                            u.updateSupplier(supplierID, supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat, phone2Txt.Text, null);
+                        }
+                        else if (phone2Txt.Text == "" && ntnTxt.Text == "")
+                        {
+                            u.updateSupplier(supplierID, supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat, null, null);
+                        }
+                        else
+                        {
+                            u.updateSupplier(supplierID, supplierCompanyTxt.Text, personNameTxt.Text, Phone1Txt.Text, addressTxt.Text, stat, phone2Txt.Text, ntnTxt.Text);
+                        }
+                        
+                        r.showSuppliers(dataGridView1, SuppIDGV, companyGV, personGV, phone1GV, phone2GV, addressGV, ntnGV, StatusGV);
                         MainClass.disable_reset(leftPanel);
                     }
 
