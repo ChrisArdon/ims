@@ -154,7 +154,7 @@ namespace ims
 
         public virtual void viewBtn_Click(object sender, EventArgs e) //Public virtual void to inherit: Build >> rebuild solution in Users form
         {
-
+            r.showSuppliers(dataGridView1, SuppIDGV, companyGV, personGV, phone1GV, phone2GV, addressGV, ntnGV, StatusGV);
         }
     }
 }
