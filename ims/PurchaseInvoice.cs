@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace ims
     {
         retrieval r = new retrieval();
         float productID;
+        Regex rg = new Regex(@"^[0-9]*(?:\.[0-9]*)?$"); //validate the currency format
         public PurchaseInvoice()
         {
             InitializeComponent();
@@ -56,6 +58,30 @@ namespace ims
         private void barcodeTxt_Validated(object sender, EventArgs e)
         {
             
+        }
+
+        private void quanTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (quanTxt.Text != "")
+            {
+                //Once the quantity has been validated 
+                if (rg.Match(quanTxt.Text).Success)
+                {
+                    float quan, price, tot;
+                    quan = Convert.ToSingle(quanTxt.Text);
+                    price = Convert.ToSingle(pupTxt.Text);
+                    tot = quan * price;
+                    totLbl.Text = tot.ToString("###########.##");
+                }
+                else
+                {
+                    quanTxt.SelectAll();
+                }
+            }
+            else
+            {
+                totLbl.Text = "0.00";
+            }
         }
     }
 }

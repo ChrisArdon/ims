@@ -41,7 +41,7 @@ namespace ims
             this.label6 = new System.Windows.Forms.Label();
             this.cartBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.totLbl = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,7 +54,7 @@ namespace ims
             // 
             // leftPanel
             // 
-            this.leftPanel.Controls.Add(this.label8);
+            this.leftPanel.Controls.Add(this.totLbl);
             this.leftPanel.Controls.Add(this.label7);
             this.leftPanel.Controls.Add(this.cartBtn);
             this.leftPanel.Controls.Add(this.pupTxt);
@@ -81,7 +81,7 @@ namespace ims
             this.leftPanel.Controls.SetChildIndex(this.pupTxt, 0);
             this.leftPanel.Controls.SetChildIndex(this.cartBtn, 0);
             this.leftPanel.Controls.SetChildIndex(this.label7, 0);
-            this.leftPanel.Controls.SetChildIndex(this.label8, 0);
+            this.leftPanel.Controls.SetChildIndex(this.totLbl, 0);
             // 
             // panel1
             // 
@@ -140,6 +140,7 @@ namespace ims
             this.quanTxt.Name = "quanTxt";
             this.quanTxt.Size = new System.Drawing.Size(217, 23);
             this.quanTxt.TabIndex = 4;
+            this.quanTxt.TextChanged += new System.EventHandler(this.quanTxt_TextChanged);
             // 
             // label4
             // 
@@ -211,15 +212,15 @@ namespace ims
             this.label7.TabIndex = 11;
             this.label7.Text = "Total Amount";
             // 
-            // label8
+            // totLbl
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 25F);
-            this.label8.Location = new System.Drawing.Point(71, 378);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 46);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "0.00";
+            this.totLbl.AutoSize = true;
+            this.totLbl.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.totLbl.Location = new System.Drawing.Point(71, 378);
+            this.totLbl.Name = "totLbl";
+            this.totLbl.Size = new System.Drawing.Size(81, 46);
+            this.totLbl.TabIndex = 12;
+            this.totLbl.Text = "0.00";
             // 
             // PurchaseInvoice
             // 
@@ -250,7 +251,7 @@ namespace ims
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox productTxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label totLbl;
         private System.Windows.Forms.Label label7;
     }
 }
