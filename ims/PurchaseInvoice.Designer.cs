@@ -153,6 +153,7 @@ namespace ims
             this.barcodeTxt.Size = new System.Drawing.Size(217, 23);
             this.barcodeTxt.TabIndex = 1;
             this.barcodeTxt.TextChanged += new System.EventHandler(this.barcodeTxt_TextChanged);
+            this.barcodeTxt.Validated += new System.EventHandler(this.barcodeTxt_Validated);
             // 
             // label5
             // 
