@@ -86,6 +86,26 @@ namespace ims
 
         private void cartBtn_Click(object sender, EventArgs e)
         {
+            if (supplierDD.SelectedIndex == -1) { suppErrorLbl.Visible = true; } else { suppErrorLbl.Visible = false; }
+            if (quanTxt.Text == "") { quantErrorLbl.Visible = true; } else { quantErrorLbl.Visible = false; }
+            if (barcodeTxt.Text == "") { barcodeErrorLbl.Visible = true; } else { barcodeErrorLbl.Visible = false; }
+            if(suppErrorLbl.Visible || quantErrorLbl.Visible || barcodeErrorLbl.Visible)
+            {
+                MainClass.ShowMSG("Fields with * are mandatory", "Stop", "Error");
+            }
+            else
+            {
+                dataGridView1.Rows.Add(productID, productTxt.Text, quanTxt.Text, pupTxt.Text, totLbl.Text);
+            }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

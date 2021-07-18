@@ -49,9 +49,12 @@ namespace ims
             this.pupGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.suppErrorLbl = new System.Windows.Forms.Label();
+            this.barcodeErrorLbl = new System.Windows.Forms.Label();
+            this.quantErrorLbl = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,7 +66,7 @@ namespace ims
             // searchTxt
             // 
             this.searchTxt.Location = new System.Drawing.Point(3, 21);
-            this.searchTxt.Size = new System.Drawing.Size(179, 25);
+            this.searchTxt.Size = new System.Drawing.Size(190, 25);
             // 
             // leftPanel
             // 
@@ -80,7 +83,13 @@ namespace ims
             this.leftPanel.Controls.Add(this.label3);
             this.leftPanel.Controls.Add(this.supplierDD);
             this.leftPanel.Controls.Add(this.label2);
-            this.leftPanel.Size = new System.Drawing.Size(250, 813);
+            this.leftPanel.Controls.Add(this.suppErrorLbl);
+            this.leftPanel.Controls.Add(this.barcodeErrorLbl);
+            this.leftPanel.Controls.Add(this.quantErrorLbl);
+            this.leftPanel.Size = new System.Drawing.Size(250, 856);
+            this.leftPanel.Controls.SetChildIndex(this.quantErrorLbl, 0);
+            this.leftPanel.Controls.SetChildIndex(this.barcodeErrorLbl, 0);
+            this.leftPanel.Controls.SetChildIndex(this.suppErrorLbl, 0);
             this.leftPanel.Controls.SetChildIndex(this.panel1, 0);
             this.leftPanel.Controls.SetChildIndex(this.label2, 0);
             this.leftPanel.Controls.SetChildIndex(this.supplierDD, 0);
@@ -105,14 +114,14 @@ namespace ims
             this.rightPanel.Controls.Add(this.panel5);
             this.rightPanel.Controls.Add(this.dataGridView1);
             this.rightPanel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rightPanel.Size = new System.Drawing.Size(1141, 813);
+            this.rightPanel.Size = new System.Drawing.Size(1202, 856);
             this.rightPanel.Controls.SetChildIndex(this.panel2, 0);
             this.rightPanel.Controls.SetChildIndex(this.dataGridView1, 0);
             this.rightPanel.Controls.SetChildIndex(this.panel5, 0);
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1141, 40);
+            this.panel2.Size = new System.Drawing.Size(1202, 40);
             // 
             // label2
             // 
@@ -262,7 +271,7 @@ namespace ims
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1141, 599);
+            this.dataGridView1.Size = new System.Drawing.Size(1202, 449);
             this.dataGridView1.TabIndex = 4;
             // 
             // proIDGV
@@ -300,32 +309,11 @@ namespace ims
             // 
             this.panel5.Controls.Add(this.tableLayoutPanel2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 690);
+            this.panel5.Location = new System.Drawing.Point(0, 540);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1141, 123);
+            this.panel5.Size = new System.Drawing.Size(1202, 316);
             this.panel5.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 25F);
-            this.label8.Location = new System.Drawing.Point(573, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(565, 123);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "0.00";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 25F);
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(564, 123);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Gross Total";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -334,19 +322,78 @@ namespace ims
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label8, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 194);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1141, 123);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1202, 122);
             this.tableLayoutPanel2.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(595, 122);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Gross Total";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.label8.Location = new System.Drawing.Point(604, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(595, 122);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "0.00";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // suppErrorLbl
+            // 
+            this.suppErrorLbl.AutoSize = true;
+            this.suppErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.suppErrorLbl.Location = new System.Drawing.Point(205, 91);
+            this.suppErrorLbl.Name = "suppErrorLbl";
+            this.suppErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.suppErrorLbl.TabIndex = 16;
+            this.suppErrorLbl.Text = "*";
+            this.suppErrorLbl.Visible = false;
+            // 
+            // barcodeErrorLbl
+            // 
+            this.barcodeErrorLbl.AutoSize = true;
+            this.barcodeErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barcodeErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.barcodeErrorLbl.Location = new System.Drawing.Point(205, 138);
+            this.barcodeErrorLbl.Name = "barcodeErrorLbl";
+            this.barcodeErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.barcodeErrorLbl.TabIndex = 17;
+            this.barcodeErrorLbl.Text = "*";
+            this.barcodeErrorLbl.Visible = false;
+            // 
+            // quantErrorLbl
+            // 
+            this.quantErrorLbl.AutoSize = true;
+            this.quantErrorLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.quantErrorLbl.Location = new System.Drawing.Point(205, 269);
+            this.quantErrorLbl.Name = "quantErrorLbl";
+            this.quantErrorLbl.Size = new System.Drawing.Size(20, 28);
+            this.quantErrorLbl.TabIndex = 18;
+            this.quantErrorLbl.Text = "*";
+            this.quantErrorLbl.Visible = false;
             // 
             // PurchaseInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 813);
+            this.ClientSize = new System.Drawing.Size(1452, 856);
             this.Name = "PurchaseInvoice";
             this.Text = "PurchaseInvoice";
             this.Load += new System.EventHandler(this.PurchaseInvoice_Load);
@@ -386,5 +433,8 @@ namespace ims
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label suppErrorLbl;
+        private System.Windows.Forms.Label barcodeErrorLbl;
+        private System.Windows.Forms.Label quantErrorLbl;
     }
 }
