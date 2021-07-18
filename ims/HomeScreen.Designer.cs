@@ -112,6 +112,7 @@ namespace ims
             this.purchaseInvoiceBtn.TabIndex = 3;
             this.purchaseInvoiceBtn.Text = "Purchase Invoice";
             this.purchaseInvoiceBtn.UseVisualStyleBackColor = true;
+            this.purchaseInvoiceBtn.Click += new System.EventHandler(this.purchaseInvoiceBtn_Click);
             // 
             // stockBtn
             // 

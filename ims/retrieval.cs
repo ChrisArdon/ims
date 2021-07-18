@@ -67,7 +67,7 @@ namespace ims
                 MainClass.ShowMSG("Unable to load categories data.", "Error", "Error");
             }
         }
-        public void getCategoriesList(string proc, ComboBox cb, string displayMember, string valueMember)
+        public void getList(string proc, ComboBox cb, string displayMember, string valueMember) //Global function to get a List and fill it in a combobox
         {
             try
             {

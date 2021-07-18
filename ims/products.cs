@@ -24,7 +24,7 @@ namespace ims
         private void products_Load(object sender, EventArgs e)
         {
             MainClass.enable_reset(leftPanel);
-            r.getCategoriesList("st_getCategoriesList", categoryDD, "Category", "ID");
+            r.getList("st_getCategoriesList", categoryDD, "Category", "ID");
         }
 
         public override void rightPanel_Paint(object sender, PaintEventArgs e)
