@@ -66,7 +66,7 @@ namespace ims
             // searchTxt
             // 
             this.searchTxt.Location = new System.Drawing.Point(3, 21);
-            this.searchTxt.Size = new System.Drawing.Size(190, 25);
+            this.searchTxt.Size = new System.Drawing.Size(173, 25);
             // 
             // leftPanel
             // 
@@ -86,7 +86,7 @@ namespace ims
             this.leftPanel.Controls.Add(this.suppErrorLbl);
             this.leftPanel.Controls.Add(this.barcodeErrorLbl);
             this.leftPanel.Controls.Add(this.quantErrorLbl);
-            this.leftPanel.Size = new System.Drawing.Size(250, 856);
+            this.leftPanel.Size = new System.Drawing.Size(250, 706);
             this.leftPanel.Controls.SetChildIndex(this.quantErrorLbl, 0);
             this.leftPanel.Controls.SetChildIndex(this.barcodeErrorLbl, 0);
             this.leftPanel.Controls.SetChildIndex(this.suppErrorLbl, 0);
@@ -114,14 +114,14 @@ namespace ims
             this.rightPanel.Controls.Add(this.panel5);
             this.rightPanel.Controls.Add(this.dataGridView1);
             this.rightPanel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rightPanel.Size = new System.Drawing.Size(1202, 856);
+            this.rightPanel.Size = new System.Drawing.Size(1080, 706);
             this.rightPanel.Controls.SetChildIndex(this.panel2, 0);
             this.rightPanel.Controls.SetChildIndex(this.dataGridView1, 0);
             this.rightPanel.Controls.SetChildIndex(this.panel5, 0);
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(1202, 40);
+            this.panel2.Size = new System.Drawing.Size(1080, 40);
             // 
             // label2
             // 
@@ -271,7 +271,7 @@ namespace ims
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1202, 449);
+            this.dataGridView1.Size = new System.Drawing.Size(1080, 449);
             this.dataGridView1.TabIndex = 4;
             // 
             // proIDGV
@@ -311,7 +311,7 @@ namespace ims
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 540);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1202, 316);
+            this.panel5.Size = new System.Drawing.Size(1080, 166);
             this.panel5.TabIndex = 5;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
@@ -323,11 +323,11 @@ namespace ims
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label8, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 194);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 44);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1202, 122);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 122);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // label9
@@ -336,7 +336,7 @@ namespace ims
             this.label9.Font = new System.Drawing.Font("Segoe UI", 25F);
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(595, 122);
+            this.label9.Size = new System.Drawing.Size(534, 122);
             this.label9.TabIndex = 13;
             this.label9.Text = "Gross Total";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -346,9 +346,9 @@ namespace ims
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 25F);
-            this.label8.Location = new System.Drawing.Point(604, 0);
+            this.label8.Location = new System.Drawing.Point(543, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(595, 122);
+            this.label8.Size = new System.Drawing.Size(534, 122);
             this.label8.TabIndex = 14;
             this.label8.Text = "0.00";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -393,7 +393,7 @@ namespace ims
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 856);
+            this.ClientSize = new System.Drawing.Size(1330, 706);
             this.Name = "PurchaseInvoice";
             this.Text = "PurchaseInvoice";
             this.Load += new System.EventHandler(this.PurchaseInvoice_Load);
