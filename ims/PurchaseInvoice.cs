@@ -83,5 +83,10 @@ namespace ims
                 totLbl.Text = "0.00";
             }
         }
+
+        private void cartBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

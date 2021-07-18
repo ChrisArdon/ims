@@ -48,10 +48,16 @@ namespace ims
             this.quantGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pupGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchTxt
@@ -96,11 +102,13 @@ namespace ims
             // 
             // rightPanel
             // 
+            this.rightPanel.Controls.Add(this.panel5);
             this.rightPanel.Controls.Add(this.dataGridView1);
             this.rightPanel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rightPanel.Size = new System.Drawing.Size(1141, 813);
             this.rightPanel.Controls.SetChildIndex(this.panel2, 0);
             this.rightPanel.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.rightPanel.Controls.SetChildIndex(this.panel5, 0);
             // 
             // panel2
             // 
@@ -212,6 +220,7 @@ namespace ims
             this.cartBtn.TabIndex = 5;
             this.cartBtn.Text = "ADD TO CART";
             this.cartBtn.UseVisualStyleBackColor = true;
+            this.cartBtn.Click += new System.EventHandler(this.cartBtn_Click);
             // 
             // label7
             // 
@@ -253,7 +262,7 @@ namespace ims
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1141, 541);
+            this.dataGridView1.Size = new System.Drawing.Size(1141, 599);
             this.dataGridView1.TabIndex = 4;
             // 
             // proIDGV
@@ -287,6 +296,52 @@ namespace ims
             this.totGV.Name = "totGV";
             this.totGV.ReadOnly = true;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.tableLayoutPanel2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 690);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1141, 123);
+            this.panel5.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.label8.Location = new System.Drawing.Point(573, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(565, 123);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "0.00";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(564, 123);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Gross Total";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1141, 123);
+            this.tableLayoutPanel2.TabIndex = 15;
+            // 
             // PurchaseInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -300,6 +355,8 @@ namespace ims
             this.rightPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -325,5 +382,9 @@ namespace ims
         private System.Windows.Forms.DataGridViewTextBoxColumn quantGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn pupGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn totGV;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
