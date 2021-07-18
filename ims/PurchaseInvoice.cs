@@ -23,7 +23,7 @@ namespace ims
         {
             r.getList("st_getSupplierList", supplierDD, "Company", "ID");
         }
-        string[] prodARR = new string[3]; // Array to capture the data from the retrieval array
+        string[] prodARR = new string[4]; // Array to capture the data from the retrieval array
         private void barcodeTxt_TextChanged(object sender, EventArgs e)
         {
             if (barcodeTxt.Text != "")
@@ -32,10 +32,16 @@ namespace ims
                 productID = Convert.ToInt32(prodARR[0]);
                 productTxt.Text = prodARR[1];
                 pupTxt.Text = prodARR[2];
+                string barco = prodARR[3];
 
                 //Deactivate the field so it can no be altered
                 productTxt.Enabled = false;
                 pupTxt.Enabled = false;
+
+                if (barco != null) //Once the product is finded, the cursor will focus be set in the quantity textbox automatically
+                {
+                    quanTxt.Focus();
+                }
             }
             else
             {

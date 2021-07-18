@@ -209,7 +209,7 @@ namespace ims
                 MainClass.ShowMSG("Unable to load supplier data.", "Error", "Error");
             }
         }
-        private string[] productsData = new string[3]; // Array that will get three parameters (the parameters of the stored procedure): ID, Product and Price
+        private string[] productsData = new string[4]; // Array that will get three parameters (the parameters of the stored procedure): ID, Product, Price and Barcode
         public string[] getProductsWRTBarcodeList(string barcode) //Get products with respect to barcode
         {
             try
@@ -230,6 +230,7 @@ namespace ims
                         productsData[0] = dr[0].ToString(); //ID
                         productsData[1] = dr[1].ToString(); //Product
                         productsData[2] = dr[2].ToString(); //Price
+                        productsData[3] = dr[3].ToString(); //Barcode
                     }
                 }
                 else
