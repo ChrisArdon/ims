@@ -209,5 +209,40 @@ namespace ims
                 MainClass.ShowMSG("Unable to load supplier data.", "Error", "Error");
             }
         }
+        private string[] productsData = new string[3]; // Array that will get three parameters (the parameters of the stored procedure): ID, Product and Price
+        public string[] getProductsWRTBarcodeList(string barcode) //Get products with respect to barcode
+        {
+            try
+            {
+                
+
+                SqlCommand cmd = new SqlCommand("st_getProductByBarcode", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@barcode", barcode);
+                MainClass.con.Open();
+                
+                SqlDataReader dr = cmd.ExecuteReader();
+                if(dr.HasRows)
+                {
+                    while(dr.Read())
+                    {
+                        //Here we fill the array 
+                        productsData[0] = dr[0].ToString(); //ID
+                        productsData[1] = dr[1].ToString(); //Product
+                        productsData[2] = dr[2].ToString(); //Price
+                    }
+                }
+                else
+                {
+                    //MainClass.ShowMSG("No product available", "Error", "Error");
+                }
+                MainClass.con.Close();
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+            }
+            return productsData;
+        }
     }
 }
