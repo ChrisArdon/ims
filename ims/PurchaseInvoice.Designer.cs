@@ -42,9 +42,16 @@ namespace ims
             this.cartBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.totLbl = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.proIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pupGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchTxt
@@ -89,8 +96,11 @@ namespace ims
             // 
             // rightPanel
             // 
+            this.rightPanel.Controls.Add(this.dataGridView1);
             this.rightPanel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rightPanel.Size = new System.Drawing.Size(1141, 813);
+            this.rightPanel.Controls.SetChildIndex(this.panel2, 0);
+            this.rightPanel.Controls.SetChildIndex(this.dataGridView1, 0);
             // 
             // panel2
             // 
@@ -192,6 +202,7 @@ namespace ims
             // 
             // cartBtn
             // 
+            this.cartBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cartBtn.FlatAppearance.BorderSize = 2;
             this.cartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cartBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -222,6 +233,60 @@ namespace ims
             this.totLbl.TabIndex = 12;
             this.totLbl.Text = "0.00";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.proIDGV,
+            this.proGV,
+            this.quantGV,
+            this.pupGV,
+            this.totGV});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 91);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1141, 541);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // proIDGV
+            // 
+            this.proIDGV.HeaderText = "proID";
+            this.proIDGV.Name = "proIDGV";
+            this.proIDGV.ReadOnly = true;
+            this.proIDGV.Visible = false;
+            // 
+            // proGV
+            // 
+            this.proGV.HeaderText = "Product";
+            this.proGV.Name = "proGV";
+            this.proGV.ReadOnly = true;
+            // 
+            // quantGV
+            // 
+            this.quantGV.HeaderText = "Quantity";
+            this.quantGV.Name = "quantGV";
+            this.quantGV.ReadOnly = true;
+            // 
+            // pupGV
+            // 
+            this.pupGV.HeaderText = "Per Unit Price";
+            this.pupGV.Name = "pupGV";
+            this.pupGV.ReadOnly = true;
+            // 
+            // totGV
+            // 
+            this.totGV.HeaderText = "Total Amount";
+            this.totGV.Name = "totGV";
+            this.totGV.ReadOnly = true;
+            // 
             // PurchaseInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -234,6 +299,7 @@ namespace ims
             this.leftPanel.PerformLayout();
             this.rightPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,5 +319,11 @@ namespace ims
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label totLbl;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proIDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pupGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totGV;
     }
 }
