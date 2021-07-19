@@ -43,11 +43,6 @@ namespace ims
             this.label7 = new System.Windows.Forms.Label();
             this.totLbl = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.proIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pupGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,6 +50,12 @@ namespace ims
             this.suppErrorLbl = new System.Windows.Forms.Label();
             this.barcodeErrorLbl = new System.Windows.Forms.Label();
             this.quantErrorLbl = new System.Windows.Forms.Label();
+            this.proIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pupGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -264,7 +265,8 @@ namespace ims
             this.proGV,
             this.quantGV,
             this.pupGV,
-            this.totGV});
+            this.totGV,
+            this.deleteGV});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 91);
             this.dataGridView1.Name = "dataGridView1";
@@ -273,37 +275,6 @@ namespace ims
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1080, 449);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // proIDGV
-            // 
-            this.proIDGV.HeaderText = "proID";
-            this.proIDGV.Name = "proIDGV";
-            this.proIDGV.ReadOnly = true;
-            this.proIDGV.Visible = false;
-            // 
-            // proGV
-            // 
-            this.proGV.HeaderText = "Product";
-            this.proGV.Name = "proGV";
-            this.proGV.ReadOnly = true;
-            // 
-            // quantGV
-            // 
-            this.quantGV.HeaderText = "Quantity";
-            this.quantGV.Name = "quantGV";
-            this.quantGV.ReadOnly = true;
-            // 
-            // pupGV
-            // 
-            this.pupGV.HeaderText = "Per Unit Price";
-            this.pupGV.Name = "pupGV";
-            this.pupGV.ReadOnly = true;
-            // 
-            // totGV
-            // 
-            this.totGV.HeaderText = "Total Amount";
-            this.totGV.Name = "totGV";
-            this.totGV.ReadOnly = true;
             // 
             // panel5
             // 
@@ -389,6 +360,46 @@ namespace ims
             this.quantErrorLbl.Text = "*";
             this.quantErrorLbl.Visible = false;
             // 
+            // proIDGV
+            // 
+            this.proIDGV.HeaderText = "proID";
+            this.proIDGV.Name = "proIDGV";
+            this.proIDGV.ReadOnly = true;
+            this.proIDGV.Visible = false;
+            // 
+            // proGV
+            // 
+            this.proGV.HeaderText = "Product";
+            this.proGV.Name = "proGV";
+            this.proGV.ReadOnly = true;
+            // 
+            // quantGV
+            // 
+            this.quantGV.HeaderText = "Quantity";
+            this.quantGV.Name = "quantGV";
+            this.quantGV.ReadOnly = true;
+            // 
+            // pupGV
+            // 
+            this.pupGV.HeaderText = "Per Unit Price";
+            this.pupGV.Name = "pupGV";
+            this.pupGV.ReadOnly = true;
+            // 
+            // totGV
+            // 
+            this.totGV.HeaderText = "Total Amount";
+            this.totGV.Name = "totGV";
+            this.totGV.ReadOnly = true;
+            // 
+            // deleteGV
+            // 
+            this.deleteGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.deleteGV.HeaderText = "Action";
+            this.deleteGV.Name = "deleteGV";
+            this.deleteGV.ReadOnly = true;
+            this.deleteGV.Text = "DELETE";
+            this.deleteGV.UseColumnTextForButtonValue = true;
+            // 
             // PurchaseInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -424,11 +435,6 @@ namespace ims
         private System.Windows.Forms.Label totLbl;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proIDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pupGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totGV;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label9;
@@ -436,5 +442,11 @@ namespace ims
         private System.Windows.Forms.Label suppErrorLbl;
         private System.Windows.Forms.Label barcodeErrorLbl;
         private System.Windows.Forms.Label quantErrorLbl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proIDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pupGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totGV;
+        private System.Windows.Forms.DataGridViewButtonColumn deleteGV;
     }
 }
