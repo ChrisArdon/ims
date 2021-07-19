@@ -15,6 +15,8 @@ namespace ims
     {
         retrieval r = new retrieval();
         float productID;
+        float gt; //gross total
+        float tot;
         Regex rg = new Regex(@"^[0-9]*(?:\.[0-9]*)?$"); //validate the currency format
         public PurchaseInvoice()
         {
@@ -47,10 +49,10 @@ namespace ims
             }
             else
             {
+                //fields reset
                 productID = 0;
                 productTxt.Text = "";
                 pupTxt.Text = "";
-
                 Array.Clear(prodARR, 0, prodARR.Length);
             }
         }
@@ -89,14 +91,52 @@ namespace ims
             if (supplierDD.SelectedIndex == -1) { suppErrorLbl.Visible = true; } else { suppErrorLbl.Visible = false; }
             if (quanTxt.Text == "") { quantErrorLbl.Visible = true; } else { quantErrorLbl.Visible = false; }
             if (barcodeTxt.Text == "") { barcodeErrorLbl.Visible = true; } else { barcodeErrorLbl.Visible = false; }
-            if(suppErrorLbl.Visible || quantErrorLbl.Visible || barcodeErrorLbl.Visible)
+            if (suppErrorLbl.Visible || quantErrorLbl.Visible || barcodeErrorLbl.Visible)
             {
                 MainClass.ShowMSG("Fields with * are mandatory", "Stop", "Error");
             }
             else
             {
                 dataGridView1.Rows.Add(productID, productTxt.Text, quanTxt.Text, pupTxt.Text, totLbl.Text);
+                gt += Convert.ToSingle(totLbl.Text);
+                grossTotalLbl.Text = gt.ToString();
+                productID = 0;
+                productTxt.Text = "";
+                pupTxt.Text = "";
+                barcodeTxt.Text = "";
+                totLbl.Text = "0.00";
+                quanTxt.Text = "";
+                Array.Clear(prodARR, 0, prodARR.Length);
+
             }
+            //else //section where we restrict the product quantity entered in the datagridview purchase
+            //{
+            //    if (dataGridView1.Rows.Count == 0) // if the datagridview is empty, we add the purchase
+            //    {
+            //        dataGridView1.Rows.Add(productID, productTxt.Text, quanTxt.Text, pupTxt.Text, totLbl.Text);
+            //        //fields reset
+            //        productID = 0;
+            //        productTxt.Text = "";
+            //        pupTxt.Text = "";
+            //        Array.Clear(prodARR, 0, prodARR.Length);
+            //    }
+            //    else
+            //    {
+            //        foreach (DataGridViewRow row in dataGridView1.Rows)
+            //        {
+            //            if (row.Cells["proIDGV"].Value.ToString() != productID.ToString()) //if the product ID entered is different from the other products, we add. Else we don't add.
+            //            {
+            //                dataGridView1.Rows.Add(productID, productTxt.Text, quanTxt.Text, pupTxt.Text, totLbl.Text);
+            //                //fields reset
+            //                productID = 0;
+            //                productTxt.Text = "";
+            //                pupTxt.Text = "";
+            //                Array.Clear(prodARR, 0, prodARR.Length);
+            //                break;
+            //            }
+            //        }
+            //    }                               
+            //}
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -107,6 +147,20 @@ namespace ims
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                if (e.ColumnIndex == 5)//If we click the Delete button in column number 5
+                {
+                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                    gt -= Convert.ToSingle(row.Cells["totGV"].Value.ToString()); //we sustract the total of the deleted row
+                    grossTotalLbl.Text = gt.ToString();
+                    dataGridView1.Rows.Remove(row);
+                }
+            }
         }
     }
 }
