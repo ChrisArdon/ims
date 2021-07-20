@@ -32,7 +32,7 @@ namespace ims
             {
                 if (serverTxt.Text != "" && databaseTxt.Text != "")
                 {
-                    s = "Data Source=" + serverTxt.Text + ";Initial Catalog=" + databaseTxt.Text + ";Integrated Security=true;";
+                    s = "Data Source=" + serverTxt.Text + ";Initial Catalog=" + databaseTxt.Text + ";Integrated Security=true;MultipleActiveResultsSets=true";
                     File.WriteAllText(path+"\\connect", s);
                     DialogResult dr = MessageBox.Show("Settings Saved Successfully...", "Information...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (dr == DialogResult.OK)
@@ -51,7 +51,7 @@ namespace ims
                 //SQL server authentication
                 if (serverTxt.Text != "" && databaseTxt.Text != "" && userTxt.Text != "" && passTxt.Text != "")
                 {
-                    s = "Data Source=" + serverTxt.Text + ";Initial Catalog=" + databaseTxt.Text + ";User ID="+userTxt.Text+";Password="+passTxt.Text+";";
+                    s = "Data Source=" + serverTxt.Text + ";Initial Catalog=" + databaseTxt.Text + ";User ID="+userTxt.Text+";Password="+passTxt.Text+ ";MultipleActiveResultsSets=true";
                     File.WriteAllText(path + "\\connect", s);
                     DialogResult dr = MessageBox.Show("Settings Saved Successfully...", "Information...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (dr == DialogResult.OK)

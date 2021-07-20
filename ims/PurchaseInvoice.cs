@@ -162,5 +162,35 @@ namespace ims
                 }
             }
         }
+
+        public override void deleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void addBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void editBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void saveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void searchTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void viewBtn_Click(object sender, EventArgs e) //Public override void to inherit: Build >> rebuild solution in Users form
+        {
+
+        }
     }
 }
