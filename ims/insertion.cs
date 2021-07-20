@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Transactions;
 
 namespace ims
 {
@@ -138,7 +139,7 @@ namespace ims
         }
 
         private Int64 purchaseInvoiceID;
-        public Int64 insertPurchaseInvoice(DateTime date, int doneBy, int suppID, int proID, int quan, float tPrice, DataGridView gv)
+        public Int64 insertPurchaseInvoice(DateTime date, int doneBy, int suppID)
         {
             try
             {
@@ -151,6 +152,7 @@ namespace ims
                 MainClass.con.Open();
                 cmd.ExecuteNonQuery();
 
+                //here enters the multiple active result sets (MultipleActiveResultSets = true)
                 cmd.CommandText = "st_getLastPurchaseID"; //get the last purchase for PurchaseInvoice table in the database
                 cmd.Parameters.Clear();
                 purchaseInvoiceID = Convert.ToInt64(cmd.ExecuteScalar());

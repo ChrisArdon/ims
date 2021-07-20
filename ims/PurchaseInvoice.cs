@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Transactions;
 
 namespace ims
 {
@@ -177,10 +178,33 @@ namespace ims
         {
 
         }
-
+        int co;
         public override void saveBtn_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count > 0)//if the dgv is not empty
+            {
+                Int64 purchaseInvoiceID;
+                insertion i = new insertion();
 
+                using (TransactionScope sc = new TransactionScope())
+                {
+                    purchaseInvoiceID = i.insertPurchaseInvoice(DateTime.Today, retrieval.USER_ID, Convert.ToInt32(supplierDD.SelectedValue));
+
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        co  += i.insertPurchaseInvoiceDetails(purchaseInvoiceID, Convert.ToInt32(row.Cells["proIDGV"].Value.ToString()), Convert.ToInt32(row.Cells["quantGV"].Value.ToString()), Convert.ToSingle(row.Cells["totGV"].Value.ToString()));
+                    }
+                    if (co > 0)
+                    {
+                        MainClass.ShowMSG("Purchase Invoice Created Successfully.", "Success", "Success");
+                    }
+                    else
+                    {
+                        MainClass.ShowMSG("Unable to create purchaice Invoice", "Error", "Error");
+                    }
+                    sc.Complete();
+                }                
+            }
         }
 
         public override void searchTxt_TextChanged(object sender, EventArgs e)
