@@ -94,6 +94,35 @@ namespace ims
 
             }
         }
+        public void getListWithTwoParameters(string proc, ComboBox cb, string displayMember, string valueMember, string param1, object val1, string param2, object val2) 
+        {
+            try
+            {
+                cb.Items.Clear();
+                cb.DataSource = null;
+                //cb.Items.Insert(0, "Select...");
+
+                SqlCommand cmd = new SqlCommand(proc, MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue(param1, val1);
+                cmd.Parameters.AddWithValue(param2, val2);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                DataRow dr = dt.NewRow();
+                dr.ItemArray = new object[] { 0, "Select..." };
+                dt.Rows.InsertAt(dr, 0);
+
+                cb.DisplayMember = displayMember; //category
+                cb.ValueMember = valueMember; //ID
+                cb.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
         public void showProducts(DataGridView gv, DataGridViewColumn proIDGV, DataGridViewColumn proNameGV, DataGridViewColumn expiryGV, DataGridViewColumn catGV, DataGridViewColumn priceGV, DataGridViewColumn barcodeGV, DataGridViewColumn catIDGV)
         {
             try
