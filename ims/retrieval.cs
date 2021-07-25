@@ -98,7 +98,7 @@ namespace ims
         {
             try
             {
-                cb.Items.Clear();
+                //cb.Items.Clear();
                 cb.DataSource = null;
                 //cb.Items.Insert(0, "Select...");
 

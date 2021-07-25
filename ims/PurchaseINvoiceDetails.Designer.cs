@@ -30,9 +30,9 @@ namespace ims
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.purDD = new System.Windows.Forms.ComboBox();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -44,20 +44,25 @@ namespace ims
             // 
             // leftPanel
             // 
-            this.leftPanel.Controls.Add(this.comboBox1);
+            this.leftPanel.Controls.Add(this.purDD);
             this.leftPanel.Controls.Add(this.label3);
-            this.leftPanel.Controls.Add(this.dateTimePicker1);
+            this.leftPanel.Controls.Add(this.datePicker);
             this.leftPanel.Controls.Add(this.label2);
             this.leftPanel.Size = new System.Drawing.Size(250, 793);
             this.leftPanel.Controls.SetChildIndex(this.panel1, 0);
             this.leftPanel.Controls.SetChildIndex(this.label2, 0);
-            this.leftPanel.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.leftPanel.Controls.SetChildIndex(this.datePicker, 0);
             this.leftPanel.Controls.SetChildIndex(this.label3, 0);
-            this.leftPanel.Controls.SetChildIndex(this.comboBox1, 0);
+            this.leftPanel.Controls.SetChildIndex(this.purDD, 0);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 51);
             // 
             // rightPanel
             // 
             this.rightPanel.Size = new System.Drawing.Size(1191, 793);
+            this.rightPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.rightPanel_Paint_1);
             // 
             // panel2
             // 
@@ -73,15 +78,17 @@ namespace ims
             this.label2.TabIndex = 2;
             this.label2.Text = "Select Date";
             // 
-            // dateTimePicker1
+            // datePicker
             // 
-            this.dateTimePicker1.CustomFormat = "MMMM- yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 138);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 23);
-            this.dateTimePicker1.TabIndex = 3;
+            this.datePicker.CustomFormat = "MMMM- yyyy";
+            this.datePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.Location = new System.Drawing.Point(12, 138);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.ShowUpDown = true;
+            this.datePicker.Size = new System.Drawing.Size(232, 23);
+            this.datePicker.TabIndex = 3;
+            this.datePicker.ValueChanged += new System.EventHandler(this.datePicker_ValueChanged);
             // 
             // label3
             // 
@@ -93,15 +100,15 @@ namespace ims
             this.label3.TabIndex = 4;
             this.label3.Text = "Select Purchase Invoice";
             // 
-            // comboBox1
+            // purDD
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 183);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 23);
-            this.comboBox1.TabIndex = 5;
+            this.purDD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.purDD.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.purDD.FormattingEnabled = true;
+            this.purDD.Location = new System.Drawing.Point(12, 183);
+            this.purDD.Name = "purDD";
+            this.purDD.Size = new System.Drawing.Size(232, 23);
+            this.purDD.TabIndex = 5;
             // 
             // PurchaseINvoiceDetails
             // 
@@ -110,6 +117,7 @@ namespace ims
             this.ClientSize = new System.Drawing.Size(1441, 793);
             this.Name = "PurchaseINvoiceDetails";
             this.Text = "Purchase Invoice Details";
+            this.Load += new System.EventHandler(this.PurchaseINvoiceDetails_Load);
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
             this.rightPanel.ResumeLayout(false);
@@ -120,9 +128,9 @@ namespace ims
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox purDD;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -17,7 +17,7 @@ namespace ims
             InitializeComponent();
         }
 
-        private void backBtn_Click(object sender, EventArgs e)
+        public virtual void backBtn_Click(object sender, EventArgs e)
         {
             HomeScreen obj = new HomeScreen();
             MainClass.showWindow(obj, this, MDI.ActiveForm);

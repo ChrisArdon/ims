@@ -214,6 +214,12 @@ namespace ims
 
         public override void viewBtn_Click(object sender, EventArgs e) //Public override void to inherit: Build >> rebuild solution in Users form
         {
+            PurchaseINvoiceDetails pid = new PurchaseINvoiceDetails();
+            MainClass.showWindow(pid, this, MDI.ActiveForm);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
