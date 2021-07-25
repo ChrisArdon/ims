@@ -29,10 +29,39 @@ namespace ims
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.leftPanel.SuspendLayout();
+            this.rightPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.Size = new System.Drawing.Size(189, 23);
+            // 
+            // leftPanel
+            // 
+            this.leftPanel.Size = new System.Drawing.Size(250, 793);
+            // 
+            // rightPanel
+            // 
+            this.rightPanel.Size = new System.Drawing.Size(1191, 793);
+            // 
+            // panel2
+            // 
+            this.panel2.Size = new System.Drawing.Size(1191, 40);
+            // 
+            // PurchaseINvoiceDetails
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1441, 793);
+            this.Name = "PurchaseINvoiceDetails";
             this.Text = "PurchaseINvoiceDetails";
+            this.leftPanel.ResumeLayout(false);
+            this.rightPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

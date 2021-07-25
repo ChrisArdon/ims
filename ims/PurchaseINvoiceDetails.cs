@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ims
 {
-    public partial class PurchaseINvoiceDetails : Form
+    public partial class PurchaseINvoiceDetails : Sample2
     {
         public PurchaseINvoiceDetails()
         {
