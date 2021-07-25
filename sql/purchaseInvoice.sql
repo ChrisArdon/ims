@@ -35,3 +35,13 @@ create procedure st_insertPurchaseInvoiceDetails
 @totPrice money
 as
 insert into purchaseInvoiceDetails values (@purchaseID, @proID, @quan, @totPrice)
+
+create procedure st_getPurchaseInvoiceList
+@month int,
+@year int
+as
+select
+pii.pi_id as 'ID',
+su.sup_address as 'Company'
+from purchaseInvoice pii inner join supplier su on su.sup_id = pii.pi_suppID
+where month(pii.pi_date) = @month and year(pii.pi_date) = @year
