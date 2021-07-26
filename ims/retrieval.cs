@@ -274,5 +274,28 @@ namespace ims
             }
             return productsData;
         }
+        public void showPurchaseInvoiceDetails(Int64 pid, DataGridView gv, DataGridViewColumn proIDGV, DataGridViewColumn proNameGV, DataGridViewColumn quantGV, DataGridViewColumn pupGV, DataGridViewColumn totGV)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_getPurchaseInvoiceDetails", MainClass.con); 
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pid",pid);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                proIDGV.DataPropertyName = dt.Columns["Product ID"].ToString();
+                proNameGV.DataPropertyName = dt.Columns["Product"].ToString();
+                quantGV.DataPropertyName = dt.Columns["Quantity"].ToString();
+                pupGV.DataPropertyName = dt.Columns["Total Price"].ToString();
+                totGV.DataPropertyName = dt.Columns["Per Unit Price"].ToString();
+
+                gv.DataSource = dt;
+            }
+            catch (Exception)
+            {
+                MainClass.ShowMSG("Unable to load categories data.", "Error", "Error");
+            }
+        }
     }
 }

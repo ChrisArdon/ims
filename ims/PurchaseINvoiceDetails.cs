@@ -35,7 +35,24 @@ namespace ims
 
         private void PurchaseINvoiceDetails_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoGenerateColumns = false;
             r.getListWithTwoParameters("st_getPurchaseInvoiceList", purDD, "Company", "ID", "@month", datePicker.Value.Month, "@year", datePicker.Value.Year);
+        }
+
+        private void purDD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (purDD.SelectedIndex != -1 && purDD.SelectedIndex != 0)
+            {
+                float gt=0; //grand total
+                r.showPurchaseInvoiceDetails(Convert.ToInt64(purDD.SelectedValue.ToString()),dataGridView1, proIDGV, proGV, quantGV, pupGV, totGV);
+                //total amount 
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    gt += Convert.ToSingle(row.Cells["totGV"].Value.ToString());
+                }
+                grossTotalLbl.Text = gt.ToString();
+                gt = 0;
+            }
         }
     }
 }
