@@ -179,6 +179,7 @@ namespace ims
 
         }
         int co;
+        updation u = new updation();
         public override void saveBtn_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)//if the dgv is not empty
@@ -193,6 +194,19 @@ namespace ims
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         co  += i.insertPurchaseInvoiceDetails(purchaseInvoiceID, Convert.ToInt32(row.Cells["proIDGV"].Value.ToString()), Convert.ToInt32(row.Cells["quantGV"].Value.ToString()), Convert.ToSingle(row.Cells["totGV"].Value.ToString()));
+                        int q;
+                        object ob = r.getProductQuantity(Convert.ToInt32(row.Cells["proIDGV"].Value.ToString()));
+                        if (ob != null)
+                        {
+                            q = Convert.ToInt32(ob);
+                            q += Convert.ToInt32(row.Cells["quantGV"].Value.ToString());
+                            u.updateStock(Convert.ToInt32(row.Cells["proIDGV"].Value.ToString()), q);
+                        }
+                        else
+                        {
+                            i.insertStock(Convert.ToInt32(row.Cells["proIDGV"].Value.ToString()), Convert.ToInt32(row.Cells["quantGV"].Value.ToString()));
+                        }
+                        
                     }
                     if (co > 0)
                     {

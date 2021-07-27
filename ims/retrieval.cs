@@ -297,5 +297,23 @@ namespace ims
                 MainClass.ShowMSG("Unable to load categories data.", "Error", "Error");
             }
         }
+        private object productStockCount = 0;
+        public object getProductQuantity(int proID)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_getProductQuantity", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@proID", proID);
+
+                MainClass.con.Open();
+                productStockCount = cmd.ExecuteScalar();
+                MainClass.con.Close();
+            }
+            catch (Exception)
+            {
+            }
+            return productStockCount;
+        }
     }
 }

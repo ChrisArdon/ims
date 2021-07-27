@@ -190,5 +190,22 @@ namespace ims
             }
             return pidCount;
         }
+        public void insertStock(int proID, int quan)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_insertStock", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@proID", proID);
+                cmd.Parameters.AddWithValue("@quan", quan);
+                MainClass.con.Open();
+                cmd.ExecuteNonQuery();
+                MainClass.con.Close();
+            }
+            catch (Exception)
+            {
+                MainClass.con.Close();
+            }
+        }
     }
 }
